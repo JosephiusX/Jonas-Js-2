@@ -1,7 +1,8 @@
 // import icons from '../img/icons.svg'; // Parcel 1
 // import icons from 'url:../../img/icons.svg'; // Parcel 2
 import icons from 'url:../img/icons.svg'; // working version
-console.log(icons);
+import 'core-js/stable';
+import 'regenerator-runtime/runtime';
 
 const recipeContainer = document.querySelector('.recipe');
 
@@ -16,10 +17,22 @@ const timeout = function (s) {
 // https://forkify-api.herokuapp.com/v2
 
 ///////////////////////////////////////
+const renderSpinner = function (parentEl) {
+  const markup = `
+    <div class="spinner">
+      <svg>
+        <use href="${icons}#icon-loader"></use>
+      </svg>
+    </div>
+    `;
+  parentEl.innerHTML = '';
+  parentEl.insertAdjacentHTML('afterbegin', markup);
+};
 
 const showRecipe = async function () {
   try {
     // 1) Loading recipe
+    renderSpinner(recipeContainer);
     const res = await fetch(
       // `https://forkify-api.herokuapp.com/api/v2/recipes/5ed6604691c37cdc054bd0bc`
       `https://forkify-api.herokuapp.com/api/v2/recipes/5ed6604591c37cdc054bc886`

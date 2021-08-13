@@ -463,6 +463,7 @@ var _stable = require("core-js/stable");
 var _runtime = require("regenerator-runtime/runtime");
 const recipeContainer = document.querySelector('.recipe');
 // https://forkify-api.herokuapp.com/v2
+// https://forkify-api.herokuapp.com/api/v2/recipes
 ///////////////////////////////////////
 const controlRecipes = async function() {
     try {
@@ -12799,12 +12800,12 @@ class RecipeView {
         this.#parentElement.insertAdjacentHTML('afterbegin', markup);
     }
     renderError(message = this.#errorMessage) {
-        const markup = `\n    s  <div class="error">\n      <div>\n        <svg>\n          <use href="${_iconsSvgDefault.default}#icon-alert-triangle"></use>\n        </svg>\n      </div>\n      <p>${message}</p>\n    </div> \n  `;
+        const markup = `\n      <div class="error">\n      <div>\n        <svg>\n          <use href="${_iconsSvgDefault.default}#icon-alert-triangle"></use>\n        </svg>\n      </div>\n      <p>${message}</p>\n    </div> \n  `;
         this.#clear();
         this.#parentElement.insertAdjacentHTML('afterbegin', markup);
     }
     rendeMessage(message = this.#message) {
-        const markup = `\n    s  <div class="message">\n      <div>\n        <svg>\n          <use href="${_iconsSvgDefault.default}#icon-smile"></use>\n        </svg>\n      </div>\n      <p>${message}</p>\n    </div> \n  `;
+        const markup = `\n    <div class="message">\n      <div>\n        <svg>\n          <use href="${_iconsSvgDefault.default}#icon-smile"></use>\n        </svg>\n      </div>\n      <p>${message}</p>\n    </div> \n  `;
         this.#clear();
         this.#parentElement.insertAdjacentHTML('afterbegin', markup);
     }
@@ -13131,7 +13132,8 @@ const state = {
 };
 const loadRecipe = async function(id) {
     try {
-        const data = await _helpersJs.getJSON(`${_configJs.API_URL}/${id}`);
+        const res = await fetch(`${_configJs.API_URL}/${id}`);
+        const data = await res.json();
         const { recipe  } = data.data;
         state.recipe = {
             id: recipe.id,
@@ -13159,7 +13161,7 @@ parcelHelpers.export(exports, "API_URL", ()=>API_URL
 parcelHelpers.export(exports, "TIMEOUT_SEC", ()=>TIMEOUT_SEC
 );
 const API_URL = 'https://forkify-api.herokuapp.com/api/v2/recipes';
-const TIMEOUT_SEC = 10;
+const TIMEOUT_SEC = 3; // https://forkify-api.herokuapp.com/api/v2/recipes?search=pizza
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"9l3Yy":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");

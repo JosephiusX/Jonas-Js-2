@@ -93,3 +93,5 @@ we cut the url out of models and give assign it to a variable in the config file
 
         in views touch helpers.js
             actually move helpers.js to js dir
+
+## 288. Event Handlers in MVC: Publisher-Subscriber Pattern

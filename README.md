@@ -81,7 +81,7 @@ create files
         import model into controllers:
             import * as model from '../model.js';
 
-        ???????? nothing rendering riht
+        ???????? nothing rendering right
         ****** accidentally passed date instead of data into render fn in recipeViews
 
 ## 287. Helpers and Configuration
@@ -95,3 +95,5 @@ we cut the url out of models and give assign it to a variable in the config file
             actually move helpers.js to js dir
 
 ## 288. Event Handlers in MVC: Publisher-Subscriber Pattern
+
+## 289. Implementing Error and Success Messages

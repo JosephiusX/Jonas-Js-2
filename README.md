@@ -54,3 +54,19 @@ install polyfillers
 ## 284. Listening For load and hashchange Events
 
 some stuff kind of works
+
+## 285 the MVC Architecture
+
+    MODEL:
+        buisness logic
+        state
+        http library
+
+    CONTROLLER:
+        application logic
+        bridge between model and views(which don't know about one another)
+        handles UI events and dispatches tasks to model and view
+
+    VIEW:
+        presentation logic
+

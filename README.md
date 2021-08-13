@@ -83,3 +83,13 @@ create files
 
         ???????? nothing rendering riht
         ****** accidentally passed date instead of data into render fn in recipeViews
+
+## 287. Helpers and Configuration
+
+        in js dir touch config.js
+            for all the constants and variables used throuought the files
+
+we cut the url out of models and give assign it to a variable in the config file that we export, and then import the variable in modules to be used in where the url was
+
+        in views touch helpers.js
+            actually move helpers.js to js dir

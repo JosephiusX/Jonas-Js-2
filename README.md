@@ -97,3 +97,14 @@ we cut the url out of models and give assign it to a variable in the config file
 ## 288. Event Handlers in MVC: Publisher-Subscriber Pattern
 
 ## 289. Implementing Error and Success Messages
+
+## 290. Implementing Search Results - pt 1
+
+            ????????????? stuck with no recipes rendering
+            ************ the problem was the auto-corrected line 14 on helpers.js was:
+
+    const res = await Promise.race(([fetchPro, timeout(TIMEOUT_SEC))]);
+
+            but should have been :
+
+    const res = await Promise.race([fetchPro, timeout(TIMEOUT_SEC)]);

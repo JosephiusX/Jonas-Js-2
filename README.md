@@ -70,3 +70,13 @@ some stuff kind of works
     VIEW:
         presentation logic
 
+## 286 Refactoring for MVC
+
+create files
+
+        in src/js touch model.js
+        in js mkdir views
+            in it touch recipeVies.js
+
+        import model into controllers:
+            import * as model from '../model.js';

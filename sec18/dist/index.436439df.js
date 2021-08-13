@@ -12825,7 +12825,7 @@ console.log(_fractional.Fraction);
 class RecipeView {
     #parentElement = document.querySelector('.recipe');
     #data;
-    render(date) {
+    render(data) {
         this.#data = data;
         const markup = this.#generateMarkup();
         this.#clear;

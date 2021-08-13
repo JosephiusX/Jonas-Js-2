@@ -471,12 +471,12 @@ const timeout = function(s) {
 };
 // https://forkify-api.herokuapp.com/v2
 ///////////////////////////////////////
-const controleRecipes = async function() {
+const controlRecipes = async function() {
     try {
         const id = window.location.hash.slice(1);
         console.log(id);
         if (!id) return;
-        renderSpinner(recipeContainer);
+        _recipeViewsJsDefault.default.renderSpinner();
         // 1) Loading recipe
         await _modelJs.loadRecipe(id);
         // 2) Rendering recipe
@@ -488,7 +488,7 @@ const controleRecipes = async function() {
 [
     'hashchange',
     'load'
-].forEach((ev)=>window.addEventListener(ev, controleRecipes)
+].forEach((ev)=>window.addEventListener(ev, controlRecipes)
 ); // window.addEventListener('hashchange', controleRecipes);
  // window.addEventListener('load', controleRecipes);
 

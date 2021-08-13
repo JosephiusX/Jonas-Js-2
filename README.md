@@ -50,3 +50,7 @@ install polyfillers
             npm i core-js
 
         import at top of controller file
+
+## 284. Listening For load and hashchange Events
+
+some stuff kind of works
